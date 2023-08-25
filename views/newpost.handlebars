@@ -3,37 +3,18 @@
   <form class="new-circus-post-form">
     <div class="mb-3">
       <label for="title-new-circus-post" class="form-label">Title:</label>
-      <input
-        type="text"
-        class="form-control"
-        id="title-new-circus-post"
-        placeholder="Enter a title of your choice"
-      />
+      <input type="text" class="form-control" id="title-new-circus-post" placeholder="Enter a title of your choice" />
     </div>
     <div class="mb-3">
       <label for="content-new-circus-post" class="form-label">Content:</label>
-      <textarea
-        class="form-control"
-        id="content-new-circus-post"
-        rows="5"
-        placeholder="Enter content here"
-      ></textarea>
+      <textarea class="form-control" id="content-new-circus-post" rows="5" placeholder="Enter content here"></textarea>
+      <label for="image-new-circus-post">Image:</label>
+      <input type="file" id="image-new-circus-post" accept="image/jpeg">
     </div>
-    <form id="signup-form" class="circus-signup-form">
- 
-  {{!-- <div class="mb-3">
-    <label for="image-new-circus-post" class="form-label">Image:</label>
-    <input
-      type="file"
-      class="form-control"
-      id="image-new-circus-post"
-      accept="image/*" <!-- Accept only image files -->
-    />
-  
-</form> --}}
+  </form>
 
-    <div class="mb-3">
-      <button type="submit" class="btn btn-primary">Create Post</button>
-    </div>
+  <div class="mb-3">
+  <button type="submit">Create Post</button>
+  </div>
   </form>
 </div>

@@ -12,11 +12,11 @@ const post_id = window.location.toString().split("/")[
       .querySelector("#content-update-circus-post")
       .value.trim();
   
-    if (title && content) {
+      if (title && content && imageFile) {
+      const formData = new FormData(); 
       const response = await fetch(`/api/posts/${post_id}`, {
         method: "PUT",
-        body: JSON.stringify({ title, content }),
-        headers: { "Content-Type": "application/json" },
+        body: formData,
       });
   
       if (response.ok) {

@@ -2,7 +2,7 @@ const deletePost = async (post_id) => {
     try {
       const response = await fetch(`/api/posts/${post_id}`, {
         method: "DELETE",
-        headers: { "Content-Type": "application/json" },
+        body: formData,
       });
   
       if (response.ok) {
