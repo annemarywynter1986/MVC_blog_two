@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../../models");
+const { User } = require("../../model");
 
 // Route to get all users
 router.get("/", (req, res) => {
@@ -44,9 +44,6 @@ router.post("/login", async (req, res) => {
         .json({ message: "Wrong username or password, please try again" });
       return;
     }
-    const seedUsers = async () => {
-      await User.bulkCreate(userData);
-    };
 
     const validPassword = await userData.checkPassword(req.body.password);
 
@@ -81,4 +78,3 @@ router.post("/logout", (req, res) => {
 });
 // Export the router
 module.exports = router;
-module.exports = seedUsers;
