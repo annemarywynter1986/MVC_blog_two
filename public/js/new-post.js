@@ -6,15 +6,12 @@ const newCircusPostFormHandler = async (event) => {
   const content = document.querySelector('#content-new-circus-post').value.trim();
   // const imageInput = document.querySelector('#image-input'); 
 
+  
   if (title && content) {
-    const formData = new FormData();
-    formData.append('title', title);
-    formData.append('content', content);
-    // formData.append('image', imageInput.files[0]);
-
     const response = await fetch('/api/posts', {
       method: 'POST',
-      body: formData,
+      body: JSON.stringify({ title, content }),
+      headers: { 'Content-Type': 'application/json' },
     });
 
     if (response.ok) {

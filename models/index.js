@@ -3,7 +3,6 @@ const User = require("./User");
 const Post = require("./Post");
 const Comment = require("./Comments");
 
-// Define the relationships between the models
 User.hasMany(Post, {
   foreignKey: "user_id", // Set up the foreign key relationship
 });
@@ -27,6 +26,5 @@ Post.hasMany(Comment, {
 User.hasMany(Comment, {
   foreignKey: "user_id", // Set up the foreign key relationship
 });
-
 // Export the models
 module.exports = { User, Post, Comment };
