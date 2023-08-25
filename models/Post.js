@@ -16,7 +16,7 @@ Post.init(
     },
     content: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     filename: {
       type: DataTypes.STRING,
