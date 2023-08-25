@@ -1,15 +1,9 @@
-console.log("Sequelize version:", require('sequelize').version);
-const { Model, DataTypes } = require('sequelize');
+const { DataTypes } = require('sequelize');
 const sequelize = require('../configs/connection');
 const bcryptjs = require('bcryptjs');
 
-class User extends Model {
-  checkPassword(loginPw) {
-    return bcryptjs.compareSync(loginPw, this.password);
-  }
-}
-
-User.init(
+const User = sequelize.define(
+  'user',
   {
     id: {
       type: DataTypes.INTEGER,
@@ -49,14 +43,9 @@ User.init(
         return updatedUser;
       },
     },
-    sequelize,
     timestamps: false,
-    freezeTableName: true,
     underscored: true,
-    modelName: 'user',
   }
 );
-
-
 
 module.exports = User;
