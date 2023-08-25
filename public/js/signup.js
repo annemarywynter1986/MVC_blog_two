@@ -12,7 +12,15 @@ const circusSignupFormHandler = async (event) => {
       body: JSON.stringify({ username, email, password }),
       headers: { 'Content-Type': 'application/json' },
     });
-
+    
+    if (response.ok) {
+      console.log('Signup successful.');
+      document.location.replace('/'); // When successful, load the homepage
+    } else {
+      console.log('Signup failed.');
+      alert('Failed to sign up.'); // When unsuccessful, show alert
+    }
+    
     if (response.ok) {
       document.location.replace('/'); // When successful, load the homepage
     } else {
